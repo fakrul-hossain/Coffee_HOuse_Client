@@ -1,0 +1,63 @@
+[
+    {
+      "name": "Espresso Delight",
+      "chef": "John Doe",
+      "supplier": "Coffee Roasters Ltd.",
+      "taste": "Rich and Bold",
+      "category": "Espresso",
+      "details": "A smooth and intense espresso with a perfect crema.",
+      "photo": "https://i.ibb.co.com/tmtjBSk/1.png",
+      "quantity": 50
+    },
+    {
+      "name": "Caramel Latte",
+      "chef": "Jane Smith",
+      "supplier": "Latte Lovers Inc.",
+      "taste": "Sweet and Creamy",
+      "category": "Latte",
+      "details": "A delightful caramel-infused latte with frothy milk.",
+      "photo": "https://i.ibb.co.com/kJrcwhx/2.png",
+      "quantity": 30
+    },
+    {
+      "name": "Vanilla Cold Brew",
+      "chef": "Emily Davis",
+      "supplier": "Cold Brew Co.",
+      "taste": "Smooth and Refreshing",
+      "category": "Cold Brew",
+      "details": "Cold-brewed coffee with a hint of vanilla for a refreshing experience.",
+      "photo": "https://i.ibb.co.com/YZHsQjp/3.png",
+      "quantity": 20
+    },
+    {
+      "name": "Mocha Bliss",
+      "chef": "Michael Brown",
+      "supplier": "ChocoCoffee Supplies",
+      "taste": "Chocolatey and Rich",
+      "category": "Mocha",
+      "details": "A rich mocha with the perfect blend of coffee and chocolate.",
+      "photo": "https://i.ibb.co.com/qF7WZpW/4.png",
+      "quantity": 40
+    },
+    {
+      "name": "Pumpkin Spice Latte",
+      "chef": "Sophia Johnson",
+      "supplier": "Seasonal Brews Co.",
+      "taste": "Spicy and Sweet",
+      "category": "Latte",
+      "details": "A seasonal favorite with warm pumpkin spice flavors.",
+      "photo": "https://i.ibb.co.com/GJbX65M/5.png",
+      "quantity": 25
+    },
+    {
+      "name": "Hazelnut Cappuccino",
+      "chef": "Oliver Wilson",
+      "supplier": "Nutty Brews",
+      "taste": "Nutty and Smooth",
+      "category": "Cappuccino",
+      "details": "A creamy cappuccino with a hint of hazelnut.",
+      "photo": "https://i.ibb.co.com/XYQHkQ7/6.png",
+      "quantity": 35
+    }
+  ]
+  

@@ -14,8 +14,12 @@ const AddCoffee = () => {
     const details = form.details.value;
     const photo = form.photo.value;
     const quantity = form.quantity.value;
+    const price = form.price.value;
+    const origin = form.origin.value;
     const newCoffee = {
         name,
+        price,
+        origin,
         chef,
         supplier,
         taste,
@@ -77,105 +81,55 @@ fetch('http://localhost:5000/coffee',{
             letters, as opposed to using Content here.
           </p>
           <form onSubmit={handleAddCoffee} className="space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Enter coffee name"
-                  className="w-full rounded border-text-primary bg-white py-2 px-4 focus:outline-text-primary focus:border-text-primary"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Chef
-                </label>
-                <input
-                  type="text"
-                  name="chef"
-                  placeholder="Enter coffee chef"
-                  className="w-full rounded border-text-primary bg-white py-2 px-4 focus:outline-text-primary focus:border-text-primary"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Supplier
-                </label>
-                <input
-                  type="text"
-                  name="supplier"
-                  placeholder="Enter coffee supplier"
-                  className="w-full rounded border-text-primary bg-white py-2 px-4 focus:outline-text-primary focus:border-text-primary"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Taste
-                </label>
-                <input
-                  type="text"
-                  name="taste"
-                  placeholder="Enter coffee taste"
-                  className="w-full rounded border-text-primary bg-white py-2 px-4 focus:outline-text-primary focus:border-text-primary"
-                />
-              </div>
-              <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Category
-              </label>
-              <input
-                type="text"
-                name="category"
-                placeholder="Enter coffee category"
-                className="w-full rounded border-text-primary bg-white py-2 px-4 focus:outline-text-primary focus:border-text-primary"
-              />
-            </div>
-              <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Quantity
-              </label>
-              <input
-                type="number"
-                name="quantity"
-                placeholder="Enter coffee quantity"
-                className="w-full rounded border-text-primary bg-white py-2 px-4 focus:outline-text-primary focus:border-text-primary"
-              />
-            </div>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Photo
-              </label>
-              <input
-                type="text"
-                name="photo"
-                placeholder="Enter photo URL"
-                className="w-full rounded border-text-primary bg-white py-2 px-4 focus:outline-text-primary focus:border-text-primary"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Details
-              </label>
-              <textarea
-                name="details"
-                placeholder="Enter coffee details"
-                className="w-full rounded border-text-primary bg-white py-2 px-4 focus:outline-text-primary focus:border-text-primary"
-                rows="4"
-              />
-            </div>
-           
-            
-            <button
-              type="submit"
-              className="mt-6 w-full bg-[rgb(210,180,140)] hover:bg-[rgb(175,140,110)] py-2 px-4 rounded-md transition text-2xl font-rancho font-bold text-primary text-center"
-            >
-              Add Coffee
-            </button>
-          </form>
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    {/* Existing Fields */}
+    <div>
+      <label className="block text-sm font-medium text-gray-700">Name</label>
+      <input type="text" name="name" placeholder="Enter coffee name" className="w-full rounded border-text-primary bg-white py-2 px-4 focus:outline-text-primary focus:border-text-primary" />
+    </div>
+    <div>
+      <label className="block text-sm font-medium text-gray-700">Chef</label>
+      <input type="text" name="chef" placeholder="Enter coffee chef" className="w-full rounded border-text-primary bg-white py-2 px-4 focus:outline-text-primary focus:border-text-primary" />
+    </div>
+    <div>
+      <label className="block text-sm font-medium text-gray-700">Supplier</label>
+      <input type="text" name="supplier" placeholder="Enter coffee supplier" className="w-full rounded border-text-primary bg-white py-2 px-4 focus:outline-text-primary focus:border-text-primary" />
+    </div>
+    <div>
+    <label className="block text-sm font-medium text-gray-700">Price</label>
+    <input type="number" name="price" placeholder="Enter coffee price" className="w-full rounded border-text-primary bg-white py-2 px-4 focus:outline-text-primary focus:border-text-primary" step="0.01" />
+  </div>
+  <div>
+    <label className="block text-sm font-medium text-gray-700">Origin</label>
+    <input type="text" name="origin" placeholder="Enter coffee origin" className="w-full rounded border-text-primary bg-white py-2 px-4 focus:outline-text-primary focus:border-text-primary" />
+  </div>
+    <div>
+      <label className="block text-sm font-medium text-gray-700">Taste</label>
+      <input type="text" name="taste" placeholder="Enter coffee taste" className="w-full rounded border-text-primary bg-white py-2 px-4 focus:outline-text-primary focus:border-text-primary" />
+    </div>
+    <div>
+      <label className="block text-sm font-medium text-gray-700">Category</label>
+      <input type="text" name="category" placeholder="Enter coffee category" className="w-full rounded border-text-primary bg-white py-2 px-4 focus:outline-text-primary focus:border-text-primary" />
+    </div>
+    <div>
+      <label className="block text-sm font-medium text-gray-700">Quantity</label>
+      <input type="number" name="quantity" placeholder="Enter coffee quantity" className="w-full rounded border-text-primary bg-white py-2 px-4 focus:outline-text-primary focus:border-text-primary" />
+    </div>
+  </div>
+
+ 
+  {/* Photo and Details */}
+  <div>
+    <label className="block text-sm font-medium text-gray-700">Photo</label>
+    <input type="text" name="photo" placeholder="Enter photo URL" className="w-full rounded border-text-primary bg-white py-2 px-4 focus:outline-text-primary focus:border-text-primary" />
+  </div>
+  <div>
+    <label className="block text-sm font-medium text-gray-700">Details</label>
+    <textarea name="details" placeholder="Enter coffee details" className="w-full rounded border-text-primary bg-white py-2 px-4 focus:outline-text-primary focus:border-text-primary" rows="4"></textarea>
+  </div>
+  <button type="submit" className="mt-6 w-full bg-[rgb(210,180,140)] hover:bg-[rgb(175,140,110)] py-2 px-4 rounded-md transition text-2xl font-rancho font-bold text-primary text-center">Add Coffee</button>
+</form>
+
         </div>
       </div>
     </div>
