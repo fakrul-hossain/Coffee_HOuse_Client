@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className="font-rancho">
      <div className="bg-cover bg-center bg-no-repeat border-t-4 border-b-4  border-dashed border-text-primary text-primary pt-10 pb-4 font-rancho"
       style={{
-        backgroundImage: `url(${footerBg})`, // Replace with your actual image URL
+        backgroundImage: `url(${footerBg})`, // 
       }}>
      <div className="container mx-auto px-4 md:px-10">
         <div className="grid md:grid-cols-2 gap-8">
@@ -85,7 +85,7 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Email"
-                className="w-full rounded border-text-primary  bg-white py-2 px-4 focus:outline-text-primary  focus:border-text-primary "
+                className="w-full rounded border-text-primary  bg-white py-2 px-4 focus:outline-text-primary  focus:border-text-primary"
               />
               <textarea
                 placeholder="Message"
