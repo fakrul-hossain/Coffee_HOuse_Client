@@ -6,6 +6,7 @@ import MainLayout from "../Mainlayout/Mainlayout";
 import Home from "../pages/Home";
 import AddCoffee from "../pages/AddCoffee";
 import UpdateCoffee from "../pages/UpdateCoffee";
+import CoffeeDetails from "../pages/CoffeeDetails";
 
 
 
@@ -18,7 +19,7 @@ import UpdateCoffee from "../pages/UpdateCoffee";
         {
           path: "/",
           element: <Home />,
-          loader: () => fetch('http://localhost:5000/coffee')
+          loader: () => fetch('https://coffee-house-server-zeta.vercel.app/coffee')
         },
         {
           path: "addCoffee",
@@ -27,7 +28,12 @@ import UpdateCoffee from "../pages/UpdateCoffee";
         {
           path: "updateCoffee/:id",
           element: <UpdateCoffee />,
-          loader: ({params})=> fetch(`http://localhost:5000/coffee/${params.id}`)
+          loader: ({params})=> fetch(`https://coffee-house-server-zeta.vercel.app/coffee/${params.id}`)
+        },
+        {
+          path: "coffeeDetails/:id",
+          element: <CoffeeDetails />,
+          loader: ({params})=> fetch(`https://coffee-house-server-zeta.vercel.app/coffee/${params.id}`)
         },
       ],
     },

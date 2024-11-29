@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import { FaEye, FaEdit, FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const DisplayCoffee = ({ coffee, onDelete }) => {
+const DisplayCoffee = ({ coffee, coffees,setCoffees }) => {
   const { name, price, chef, photo, _id } = coffee;
 
   const handleDelete = (id) => {
@@ -17,14 +17,15 @@ const DisplayCoffee = ({ coffee, onDelete }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/coffee/${id}`, {
+        fetch(`https://coffee-house-server-zeta.vercel.app/coffee/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your coffee has been deleted.", "success");
-              onDelete(id); // Notify the parent to update the UI
+              const remainingCoffees = coffees.filter((coffee) => coffee._id !== _id);
+              setCoffees(remainingCoffees);
             }
           });
       }
@@ -55,9 +56,11 @@ const DisplayCoffee = ({ coffee, onDelete }) => {
 
       {/* Action Buttons */}
       <div className="flex flex-col space-y-2">
+        <Link to={`/coffeeDetails/${_id}`}>
         <button className="p-2 bg-[#D2B48C] text-white rounded hover:bg-[#C19A74]">
           <FaEye />
         </button>
+        </Link>
         <Link to={`updateCoffee/${_id}`}>
           <button className="p-2 bg-gray-800 text-white rounded hover:bg-gray-600">
             <FaEdit />
@@ -83,7 +86,8 @@ DisplayCoffee.propTypes = {
     photo: PropTypes.string.isRequired,
     _id: PropTypes.string.isRequired,
   }).isRequired,
-  onDelete: PropTypes.func.isRequired,
+  coffees: PropTypes.array.isRequired,
+  setCoffees: PropTypes.func.isRequired,
 };
 
 export default DisplayCoffee;

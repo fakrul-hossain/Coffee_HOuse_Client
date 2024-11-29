@@ -8,7 +8,7 @@ import img6 from "../assets/cups/Rectangle 15.png";
 import img7 from "../assets/cups/Rectangle 16.png";
 import img8 from "../assets/cups/Rectangle 9.png";
 
-const DisplayCoffee = () => {
+const AllCoffees = () => {
   return (
     <div className="bg-white my-16">
       <div className="text-center mb-10">
@@ -17,7 +17,7 @@ const DisplayCoffee = () => {
           Follow on Instagram
         </h2>
       </div>
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
         {/* Images */}
         <img
           src={img1}
@@ -64,4 +64,4 @@ const DisplayCoffee = () => {
   );
 };
 
-export default DisplayCoffee;
+export default AllCoffees;

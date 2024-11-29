@@ -5,16 +5,14 @@ import Banner from "../Components/Banner";
 import bgImage from "../assets/more/1.png";
 import iconImg from "../assets/icons/1.png";
 import DisplayCoffee from "../Components/DisplayCoffees";
+import AllCoffees from "../Components/AllCoffees";
 
 const Home = () => {
   const initialCoffees = useLoaderData();
   const [coffees, setCoffees] = useState(initialCoffees);
 
   // Function to handle coffee deletion
-  const handleDelete = (id) => {
-    const remainingCoffees = coffees.filter((coffee) => coffee._id !== id);
-    setCoffees(remainingCoffees);
-  };
+
 
   return (
     <div>
@@ -56,7 +54,8 @@ const Home = () => {
                 <DisplayCoffee
                   key={coffee._id}
                   coffee={coffee}
-                  onDelete={handleDelete} // Pass the delete handler
+                  coffees={coffees}
+                  setCoffees={setCoffees} // Pass the delete handler
                 />
               ))
             ) : (
@@ -67,6 +66,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <AllCoffees/>
     </div>
   );
 };
